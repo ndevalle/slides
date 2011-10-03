@@ -9,8 +9,8 @@
 	
 	<title>HTML</title>
 	
-	<meta name="description" content="A jQuery library for modern HTML presentations">
-	<meta name="author" content="Caleb Troughton">
+	<meta name="description" content="HTML">
+	<meta name="author" content="Nati Devalle">
 	<meta name="viewport" content="width=1024, user-scalable=no">
 	
 	<!-- Core and extension CSS files -->
@@ -27,7 +27,7 @@
 	
 	<!-- Custom CSS just for this page -->
 	<link rel="stylesheet" href="introduction.css">
-	<link rel="stylesheet" href="http://chico-ui.com.ar/versions/0.7.8/chico-mesh.css">
+	<link rel="stylesheet" href="../chico/css/chico-mesh.css">
 	
 	<script src="../modernizr.custom.js"></script>
 </head>
@@ -85,12 +85,12 @@
 			<p>Recode your styles and javascript. No need to touch your main code.</p>
 		</li>
 		<li class="slide">
-			<h4>Accesibility</h4>
+			<h4>Accessibility</h4>
 			<p>Allow readers and robots to understand your application just by looking at your skeleton.</p>
 		</li>
 		<li class="slide">
-			<h4>SEO</h4>
-			<p>Google will find you better if they can read your code.</p>
+			<h4>SEO (Search Engine Optimitation)</h4>
+			<p>Google will find you better if they can read your code properly.</p>
 		</li>
 		<li class="slide">
 			<h4>Performance</h4>
@@ -103,28 +103,98 @@
 	</ol>
 </section>
 
-<section class="slide" id="great-html">
+<section class="slide" id="basic-markup">
 	<h2>The Basic Markup</h2>
-	<div class="ch-g1-2">
+	<div class="ch-g2-5">
 		<img src="images/skeleton-tags.jpg">
 	</div>
-	<div class="ch-g1-2">
-	<pre><code>&lt;section class=&quot;slide&quot;&gt;
-   &lt;h2&gt;How to Make a Deck&lt;/h2&gt;
-   &lt;ol&gt;
-      &lt;li&gt;
-         &lt;h3&gt;Write Slides&lt;/h3&gt;
-         &lt;p&gt;Slide content is simple HTML.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-         &lt;h3&gt;Choose Themes&lt;/h3&gt;
-         &lt;p&gt;One for slide styles and one for deck transitions.&lt;/p&gt;
-      &lt;/li&gt;
-      &hellip;
-   &lt;/ol&gt;
-&lt;/section&gt;</code></pre>
+	<div class="ch-g3-5 slide">
+	<pre class="rightcolumn"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+
+ &lt;head&gt;
+   &lt;title&gt;My title&lt;/title&gt;
+   &lt;link rel='stylesheet' href='styles.css'&gt;
+ &lt;/head&gt;
+
+ &lt;body&gt;
+   &lt;h1&gt;Title&lt;/h1&gt;
+   &lt;div class='box'&gt;
+     &lt;p&gt;My paragraph&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;script src='script.js'&gt;&lt;/script&gt;
+ &lt;/body&gt;
+ 
+&lt;/html&gt;</code></pre>
 	</div>
 </section>
+
+<section class="slide" id="semantics">
+	<h2>Semantics</h2>
+	<p>Does it mean something to you?</p>		
+	<div class="slide wrong"><pre><code> &lt;div class='mp-342'&gt;</code></pre></div>
+	<div class="slide wrong"><pre><code> &lt;div class='LeaWasHere'&gt;</code></pre></div>
+	<div class="slide wrong"><pre><code> &lt;div class='blue-box'&gt;</code></pre></div>
+	<div class="slide right"><pre><code> &lt;div class='box login'&gt;</code></pre></div>
+	
+</section>
+
+<section class="slide" id="semantics-2">
+	<h2>Semantics (cont.)</h2>
+	<p>It's not only for CSS.</p>		
+
+			<div class="slide wrong"><pre><code> &lt;form id='myform'&gt;</code></pre></div>
+			<div class="slide wrong"><pre><code> var validation1</code></pre></div>
+			<div class="slide wrong"><pre><code> doTheMagic();</code></pre></div>
+			<div class="slide right"><pre><code> var password = $('#password');</code></pre></div>	
+	
+
+	
+</section>
+
+<section class="slide" id="semantics-3">
+	<h2>Semantics (cont.)</h2>
+	<p>It's not only about names. <strong>Use the right element</strong>.</p>		
+	<div class="slide wrong"><pre><code> &lt;div class='title'&gt;</code></pre></div>
+	<div class="slide right"><pre><code> &lt;h1&gt;</code></pre></div>
+	<hr class="slide">
+	<div class="slide wrong"><pre><code> &lt;p class='quote'&gt;</code></pre></div>	
+	<div class="slide right"><pre><code> &lt;blockquote&gt;</code></pre></div>	
+</section>
+
+<section class="slide" id="semantics-4">
+	<h2>Semantics (cont.)</h2>
+	<p>It could become standard.</p>		
+	<div class="slide"><pre><code> &lt;div class='header'&gt;</code></pre></div>
+	<div class="slide right"><pre><code> &lt;header&gt;</code></pre></div>
+	<hr class="slide">
+	<div class="slide"><pre><code> &lt;ul class='nav'&gt;</code></pre></div>	
+	<div class="slide right"><pre><code> &lt;nav&gt;</code></pre></div>	
+</section>
+
+<section class="slide" id="id-vs-class">
+	<h2>IDs vs. Class</h2>
+	<h3>It's pretty simple:</h3>		
+	<ul>
+		<li><h6>IDs for element identification -> Javascript</h6></li>
+		<li><h6>Class for presentation -> CSS</h6></li>
+	</ul>
+	<div class="slide">
+		<pre><code>&lt;input type="text" class='security-code' id='securityCode'&gt;</code></pre>	
+	</div>
+	<div class="slide">
+		<hr>
+		<h3>Why?</h3>
+		<ul>
+			<li><h6>Less CSS code by recycling classes</h6></li>
+			<li>
+				<h6>Avoid mistakes with big development teams</h6>
+				<p>If a developer needs to change an ID for backend reasons, they don't need to think about the frontend impact of that change.</p>
+			</li>
+		</ul>
+	</div>
+</section>
+
 
 <!--
 <section class="slide" id="themes">
