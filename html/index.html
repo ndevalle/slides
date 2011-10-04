@@ -14,22 +14,22 @@
 	<meta name="viewport" content="width=1024, user-scalable=no">
 	
 	<!-- Core and extension CSS files -->
-	<link rel="stylesheet" href="../core/deck.core.css">
-	<link rel="stylesheet" href="../extensions/goto/deck.goto.css">
-	<link rel="stylesheet" href="../extensions/menu/deck.menu.css">
-	<link rel="stylesheet" href="../extensions/navigation/deck.navigation.css">
-	<link rel="stylesheet" href="../extensions/status/deck.status.css">
-	<link rel="stylesheet" href="../extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="../deck/core/deck.core.css">
+	<link rel="stylesheet" href="../deck/extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="../deck/extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="../deck/extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="../deck/extensions/status/deck.status.css">
+	<link rel="stylesheet" href="../deck/extensions/hash/deck.hash.css">
 	
 	<!-- Theme CSS files (menu swaps these out) -->
-	<link rel="stylesheet" id="style-theme-link" href="../themes/style/web-2.0.css">
-	<link rel="stylesheet" id="transition-theme-link" href="../themes/transition/horizontal-slide.css">
+	<link rel="stylesheet" id="style-theme-link" href="../deck/themes/style/web-2.0.css">
+	<link rel="stylesheet" id="transition-theme-link" href="../deck/themes/transition/horizontal-slide.css">
 	
 	<!-- Custom CSS just for this page -->
-	<link rel="stylesheet" href="introduction.css">
+	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="../chico/css/chico-mesh.css">
 	
-	<script src="../modernizr.custom.js"></script>
+	<script src="../deck/modernizr.custom.js"></script>
 </head>
 
 <body class="deck-container">
@@ -63,15 +63,45 @@
 </section>
 
 <section class="slide" id="this-is-html">
-	<h2>This is HTML</h2>
-	<img src="images/skeleton.jpg">
+	<h2>HTML is this</h2>
+	<div class="ch-g1-2">
+		<img src="images/skeleton.jpg">
+	</div>
+	<div class="ch-g1-2 slide">
+		<img src="images/m-m.jpg">
+		<h3 class="summary">Good HTML is only content. Presentation and interaction are separated layers in our code.</h3>
+	</div>
 </section>
 
-<section class="slide" id="m-and-m">
-	<h2>This is HTML (cont.)</h2>
-	<img src="images/m-m.jpg">
-	<p class="summary">Good HTML is only content. Presentation and interaction are separated layers in our code.</p>
+
+<section class="slide" id="basic-markup">
+	<h2>The Basic Markup</h2>
+	<div class="ch-g2-5">
+		<img src="images/skeleton-tags.jpg">
+	</div>
+	<div class="ch-g3-5 slide">
+	<pre class="rightcolumn"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+
+ &lt;head&gt;
+   &lt;title&gt;My title&lt;/title&gt;
+   &lt;link rel='stylesheet' href='styles.css'&gt;
+ &lt;/head&gt;
+
+ &lt;body&gt;
+   &lt;h1&gt;Title&lt;/h1&gt;
+   &lt;div class='box'&gt;
+     &lt;p&gt;My paragraph&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;script src='script.js'&gt;&lt;/script&gt;
+ &lt;/body&gt;
+ 
+&lt;/html&gt;</code></pre>
+	</div>
 </section>
+
+
+
 
 <section class="slide" id="great-html">
 	<h1>What about GREAT HTML?</h1>
@@ -103,31 +133,6 @@
 	</ol>
 </section>
 
-<section class="slide" id="basic-markup">
-	<h2>The Basic Markup</h2>
-	<div class="ch-g2-5">
-		<img src="images/skeleton-tags.jpg">
-	</div>
-	<div class="ch-g3-5 slide">
-	<pre class="rightcolumn"><code>&lt;!doctype html&gt;
-&lt;html&gt;
-
- &lt;head&gt;
-   &lt;title&gt;My title&lt;/title&gt;
-   &lt;link rel='stylesheet' href='styles.css'&gt;
- &lt;/head&gt;
-
- &lt;body&gt;
-   &lt;h1&gt;Title&lt;/h1&gt;
-   &lt;div class='box'&gt;
-     &lt;p&gt;My paragraph&lt;/p&gt;
-   &lt;/div&gt;
-   &lt;script src='script.js'&gt;&lt;/script&gt;
- &lt;/body&gt;
- 
-&lt;/html&gt;</code></pre>
-	</div>
-</section>
 
 <section class="slide" id="semantics">
 	<h2>Semantics</h2>
@@ -306,18 +311,18 @@
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="../jquery-1.6.4.min.js"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="../deck/jquery-1.6.4.min.js"><\/script>')</script>
 
 <!-- Deck Core and extensions -->
-<script src="../core/deck.core.js"></script>
-<script src="../extensions/menu/deck.menu.js"></script>
-<script src="../extensions/goto/deck.goto.js"></script>
-<script src="../extensions/status/deck.status.js"></script>
-<script src="../extensions/navigation/deck.navigation.js"></script>
-<script src="../extensions/hash/deck.hash.js"></script>
+<script src="../deck/core/deck.core.js"></script>
+<script src="../deck/extensions/menu/deck.menu.js"></script>
+<script src="../deck/extensions/goto/deck.goto.js"></script>
+<script src="../deck/extensions/status/deck.status.js"></script>
+<script src="../deck/extensions/navigation/deck.navigation.js"></script>
+<script src="../deck/extensions/hash/deck.hash.js"></script>
 
 <!-- Specific to this page -->
-<script src="introduction.js"></script>
+<script src="html.js"></script>
 
 </body>
 </html>
