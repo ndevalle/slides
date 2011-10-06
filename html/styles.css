@@ -9,3 +9,16 @@
 .right code {color: green;}
 
 .deck-previous.wrong code, .deck-before.wrong code{color: red;}
+
+.block {
+	  -moz-transform: translate(0pt, -50%);
+    left: 0;
+    padding: 0 48px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+.standalone {
+	font-size: 4.5em;
+}

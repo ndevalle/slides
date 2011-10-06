@@ -25,11 +25,17 @@
 	<link rel="stylesheet" id="style-theme-link" href="../deck/themes/style/web-2.0.css">
 	<link rel="stylesheet" id="transition-theme-link" href="../deck/themes/transition/horizontal-slide.css">
 	
-	<!-- Custom CSS just for this page -->
+
+	
+	<!-- google fonts -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Kreon:300,400,700&amp;v1"
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic&amp;v1">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,bold,bolditalic&amp;v1">
+	<script src="../deck/modernizr.custom.js"></script>
+	
+		<!-- Custom CSS just for this page -->
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="../chico/css/chico-mesh.css">
-	
-	<script src="../deck/modernizr.custom.js"></script>
 </head>
 
 <body class="deck-container">
@@ -74,6 +80,51 @@
 </section>
 
 
+<section class="slide" id="great-html">
+	<h1>Why is it so important?</h1>
+</section>
+
+<section class="slide" id="great-html-2">
+	<h2>Why is it important?</h2>
+	<ol>
+		<li>
+			<h4>Scalability and Manteinance</h4>
+			<p>Recode your styles and javascript. No need to touch your main code.</p>
+		</li>
+		<li class="slide">
+			<h4>Accessibility</h4>
+			<p>Allow readers and robots to understand your application just by looking at your <em>skeleton</em>.</p>
+		</li>
+		<li class="slide">
+			<h4>SEO (Search Engine Optimitation)</h4>
+			<p>Google will find you better if they can read your code properly.</p>
+		</li>
+		<li class="slide">
+			<h4>Performance</h4>
+			<p>The better your HTML is written, the less browsers will work to render it.</p>
+		</li>
+		<li class="slide">
+			<h4>Cross plattform applications</h4>
+			<p>Same code, every device.</p>
+		</li>	
+	</ol>
+</section>
+
+<section class="slide">
+	<h1>But also...</h1>
+</section>
+
+<section class="slide">
+	<div class="block">
+	<div class="ch-g1-2">
+		<img src="images/source-code.png">
+	</div>
+	<div class="ch-g1-2"><h2 class="standalone">Quality.</h2></div>
+	</div>
+</section>
+
+
+
 <section class="slide" id="basic-markup">
 	<h2>The Basic Markup</h2>
 	<div class="ch-g2-5">
@@ -103,39 +154,185 @@
 
 
 
-<section class="slide" id="great-html">
-	<h1>What about GREAT HTML?</h1>
+
+<section class="slide" id="closer-look">
+	<h1>Let's take a closer look</h1>
 </section>
 
-<section class="slide" id="great-html-2">
-	<h2>What GREAT HTML is about</h2>
-	<ol>
-		<li class="slide">
-			<h4>Scalability</h4>
-			<p>Recode your styles and javascript. No need to touch your main code.</p>
-		</li>
-		<li class="slide">
-			<h4>Accessibility</h4>
-			<p>Allow readers and robots to understand your application just by looking at your skeleton.</p>
-		</li>
-		<li class="slide">
-			<h4>SEO (Search Engine Optimitation)</h4>
-			<p>Google will find you better if they can read your code properly.</p>
-		</li>
-		<li class="slide">
-			<h4>Performance</h4>
-			<p>The better your HTML is written, the less browsers will work to render it.</p>
-		</li>
-		<li class="slide">
-			<h4>Cross plattform applications</h4>
-			<p>Same code, every device.</p>
-		</li>	
-	</ol>
+<section class="slide" id="closer-look2">
+	<h2>A closer look</h2>
+	<div class="ch-g3-5">
+	<pre class="rightcolumn"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+
+ &lt;head&gt;
+   &lt;title&gt;My title&lt;/title&gt;
+   &lt;link rel='stylesheet' href='styles.css'&gt;
+ &lt;/head&gt;
+
+ &lt;body&gt;
+   &lt;h1&gt;Title&lt;/h1&gt;
+   &lt;div class='box'&gt;
+     &lt;p&gt;My paragraph&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;script src='script.js'&gt;&lt;/script&gt;
+ &lt;/body&gt;
+ 
+&lt;/html&gt;</code></pre>
+	</div>
+	<div class="ch-g2-5">
+		<div class="slide">
+			<h4>The &lt;doctype&gt; </h4>
+			<ul>
+			<li>Document type</li>
+			<li>Avoids Quirks Mode</li>
+		</ul>	
+		</div>
+		<div class="slide">
+			<h3>The &lt;head&gt;</h3>
+			<ul>
+				<li>Title and metadata</li>
+				<li>CSS references</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h3>The &lt;body&gt;</h3>
+			<ul>
+		<li>All content</li>
+		<li>Javascript references</li>
+	</ul>
+			
+		</div>
+	</div>
+
 </section>
+<section class="slide">
+	<div class="block">
+
+		<img src="images/good-vs-bad.png">
+		<h1>vs.</h1>
+	</div>
+</section>
+
+<section class="slide">
+		<h1>How to write good html</h1>
+</section>
+
+<section class="slide">
+	<h2>Separate content</h2>
+	<p>HTML must be <strong>free of inline css or js</strong>. Content is what really matters.</p>
+	<div class="slide">
+		<div><pre><code class="wrong">&lt;p style="color: grey; font-size: 11px;&gt;Copyright 2011&lt;/p&gt;</code></pre></div>
+		<div class="right"><pre><code>&lt;p class="copyright"&gt;Copyright 2011&lt;/p&gt;</code></pre></div>
+	</div>
+	
+	<div class="slide">
+		<hr>
+			<div class="wrong"><pre><code>&lt;input type="button" onClick=""&gt;</code></pre></div>	
+	<div class="right"><pre><code>&lt;input type="button" id="confirmation"&gt;
+		
+$("#confirmation").click(){
+	//do something
+}</code></pre></div>	
+	</div>
+
+</section>
+
+<section class="slide">
+
+			<h2>Less is more</h2>
+			<p>Minimize the amount of html elements on your code. You'll help the DOM render it faster.</p>
+<div class="slide">
+				<pre><code>&lt;div class="container"&gt;
+  &lt;div class="features"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span class="item"&gt;Pretty&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span class="item"&gt;Fast&lt;/span&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p style="text-align: center;">vs.</p>
+
+			<div class="right">	<pre><code>&lt;ul class="container features"&gt;
+  &lt;li&gt;Pretty&lt;/li&gt;
+  &lt;li&gt;Fast&lt;/li&gt;
+&lt;/ul&gt;</code></pre></div>
+</div>
+</section>
+
+<section class="slide">
+	<h2>Do not lay out with &lt;table&gt;</h2>
+	<p>Tables are for tabulated data ONLY.</p>
+	<p>Here some reasons:</p>
+	<ul>
+		<li>They need more markup</li>
+		<li>They're semantically incorrect</li>
+		<li>It's impossible to redesign without refactoring your markup</li>
+	</ul>
+</section>
+
+
+
+<section class="slide">
+	<div class="block">
+
+		<img src="images/no-tables.png">
+		<h1>vs.</h1>
+	</div>
+</section>
+
+
+<section class="slide">
+	<h2>Avoid deprecated elements</h2>
+	<div class="slide">
+	<h3>&lt;center&gt;</h3>
+		<div><pre><code class="wrong">&lt;center&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/center&gt;</code></pre></div>
+		<div class="right"><pre><code>&lt;p&gt;Content&lt;/p&gt;
+			
+p {
+  text-align: center;
+}</code></pre></div>
+	</div>
+	
+	<div class="slide">
+		<hr>
+			<div class="wrong"><pre><code>&lt;center&gt;&lt;div class="container"&gt;Content&lt;/div&gt;&lt;/center&gt;</code></pre></div>	
+		<div class="right"><pre><code>&lt;div class="container"&gt;Content&lt;/div&gt;
+			
+.container {
+  margin: 10px auto;
+  width: 970px
+}</code></pre></div>
+	</div>
+
+</section>
+
+
+<section class="slide">
+	<h2>Avoid <del>deprecated</del> unnecesary elements</h2>
+	<div class="slide">
+	<h3>&lt;br&gt;</h3>
+
+			<div class="wrong"><pre><code>&lt;p&gt;
+One paragraph
+&lt;br&gt;
+Another paragraph
+&lt;/p&gt;</code></pre></div>	
+		<div class="right"><pre><code>&lt;p&gt;One paragraph&lt;/p&gt;
+&lt;p&gt;Another paragraph&lt;/p&gt;
+	
+p {
+  margin: 5px;
+}</code></pre></div>
+	</div>
+
+</section>
+
 
 
 <section class="slide" id="semantics">
-	<h2>Semantics</h2>
+	<h2>Be semantic</h2>
 	<p>Does it mean something to you?</p>		
 	<div class="slide wrong"><pre><code> &lt;div class='mp-342'&gt;</code></pre></div>
 	<div class="slide wrong"><pre><code> &lt;div class='LeaWasHere'&gt;</code></pre></div>
@@ -145,11 +342,11 @@
 </section>
 
 <section class="slide" id="semantics-2">
-	<h2>Semantics (cont.)</h2>
+	<h2>Be semantic (cont.)</h2>
 	<p>It's not only for CSS.</p>		
 
 			<div class="slide wrong"><pre><code> &lt;form id='myform'&gt;</code></pre></div>
-			<div class="slide wrong"><pre><code> var validation1</code></pre></div>
+			<div class="slide wrong"><pre><code> http://img.mysite.com/834jjas42.jpg</code></pre></div>
 			<div class="slide wrong"><pre><code> doTheMagic();</code></pre></div>
 			<div class="slide right"><pre><code> var password = $('#password');</code></pre></div>	
 	
@@ -158,7 +355,7 @@
 </section>
 
 <section class="slide" id="semantics-3">
-	<h2>Semantics (cont.)</h2>
+	<h2>Be semantic (cont.)</h2>
 	<p>It's not only about names. <strong>Use the right element</strong>.</p>		
 	<div class="slide wrong"><pre><code> &lt;div class='title'&gt;</code></pre></div>
 	<div class="slide right"><pre><code> &lt;h1&gt;</code></pre></div>
@@ -168,7 +365,7 @@
 </section>
 
 <section class="slide" id="semantics-4">
-	<h2>Semantics (cont.)</h2>
+	<h2>Be semantic (cont.)</h2>
 	<p>It could become standard.</p>		
 	<div class="slide"><pre><code> &lt;div class='header'&gt;</code></pre></div>
 	<div class="slide right"><pre><code> &lt;header&gt;</code></pre></div>
@@ -200,7 +397,9 @@
 	</div>
 </section>
 
-
+<section class="slide">
+	<h1>... and NEVER repeat IDs</h1>
+</section>
 <!--
 <section class="slide" id="themes">
 	<h2>Style Themes</h2>
