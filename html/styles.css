@@ -11,14 +11,13 @@
 .deck-previous.wrong code, .deck-before.wrong code{color: red;}
 
 .block {
-	  -moz-transform: translate(0pt, -50%);
-    left: 0;
-    padding: 0 48px;
-    position: absolute;
-    right: 0;
-    top: 50%;
+	 margin: 30px auto;
+	 padding: 40px 0;
 }
 
 .standalone {
 	font-size: 4.5em;
 }
+
+li.important {color: #0B7495;font-weight: bold;}
+.rightcolumn {padding-left: 20px;}

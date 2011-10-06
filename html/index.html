@@ -153,12 +153,6 @@
 
 
 
-
-
-<section class="slide" id="closer-look">
-	<h1>Let's take a closer look</h1>
-</section>
-
 <section class="slide" id="closer-look2">
 	<h2>A closer look</h2>
 	<div class="ch-g3-5">
@@ -206,13 +200,14 @@
 	</div>
 
 </section>
+<!--
 <section class="slide">
 	<div class="block">
 
 		<img src="images/good-vs-bad.png">
 		<h1>vs.</h1>
 	</div>
-</section>
+</section> -->
 
 <section class="slide">
 		<h1>How to write good html</h1>
@@ -222,7 +217,7 @@
 	<h2>Separate content</h2>
 	<p>HTML must be <strong>free of inline css or js</strong>. Content is what really matters.</p>
 	<div class="slide">
-		<div><pre><code class="wrong">&lt;p style="color: grey; font-size: 11px;&gt;Copyright 2011&lt;/p&gt;</code></pre></div>
+		<div><pre><code class="wrong">&lt;p style="color: grey; font-size: 11px;"&gt;Copyright 2011&lt;/p&gt;</code></pre></div>
 		<div class="right"><pre><code>&lt;p class="copyright"&gt;Copyright 2011&lt;/p&gt;</code></pre></div>
 	</div>
 	
@@ -268,18 +263,29 @@ $("#confirmation").click(){
 	<ul>
 		<li>They need more markup</li>
 		<li>They're semantically incorrect</li>
-		<li>It's impossible to redesign without refactoring your markup</li>
+		<li class="important">It's impossible to redesign without refactoring your markup</li>
 	</ul>
+	<div class="slide">
+		<hr>
+	<h3>In doubt? test it</h3>
+<img src="images/disable-css.png">
+<p>With your styles disabled, you shouldn't see any presentation layer at all. <strong>Not even columns.</strong></p>
+</div>
 </section>
 
 
 
 <section class="slide">
-	<div class="block">
 
-		<img src="images/no-tables.png">
-		<h1>vs.</h1>
-	</div>
+<div class="ch-g1-2">
+	<p>Home MP Chile</p>
+	<img src="images/home-mlc.png">
+</div>
+	
+<div class="ch-g1-2">
+	<p class="rightcolumn">Home MP Argentina</p>
+	<img class="rightcolumn" src="images/home-mla.png">
+</div>
 </section>
 
 
@@ -310,6 +316,22 @@ p {
 
 
 <section class="slide">
+	<h2>Avoid deprecated attributes</h2>
+	<div class="slide">
+		<pre><code class="wrong">&lt;img align="right"&gt;</code></pre>
+	</div>
+	
+	<div class="slide">
+		<pre><code class="wrong">&lt;body bgcolor="#000000"&gt;</code></pre>
+	</div>
+
+	<div class="slide">
+		<pre><code class="wrong">&lt;img border="0"&gt;</code></pre>
+	</div>
+	
+</section>
+
+<section class="slide">
 	<h2>Avoid <del>deprecated</del> unnecesary elements</h2>
 	<div class="slide">
 	<h3>&lt;br&gt;</h3>
@@ -329,7 +351,21 @@ p {
 
 </section>
 
+<section class="slide">
+	<h2>&lt;img&gt; vs. background-image</h2>
+	<p>Use embebed images when they are content.</p>
+	<pre><code>&lt;img src="ipn-infography.jpg" alt="Instant Payment Notification Infography" width="600px" height="800px"&gt;</code></pre>
+	<div class="slide">
+		<hr>
+		<p>Use background images when they are decoration.</p>
+		<pre><code>&lt;div class="alert"&gt;Warning!&lt;/div&gt;
 
+.alert {
+   background-image: url(alert.gif) no-repeat;
+   padding-left: 24px;
+}</code></pre>
+	</div>
+</section>
 
 <section class="slide" id="semantics">
 	<h2>Be semantic</h2>
@@ -398,7 +434,38 @@ p {
 </section>
 
 <section class="slide">
-	<h1>... and NEVER repeat IDs</h1>
+	<h2>Other little tips</h2>
+	<ul>
+		<li>
+			<h3>Don't forget the &lt;doctype&gt;.</h3>
+			<p>Avoid quiksmode!</p>
+		</li>
+		<li>
+			<h3>Use external stylesheet and javascript files.</h3>
+			<p>One file each, even better!</p>
+		</li>
+		<li>
+			<h3>Avoid "divitis". There's a bunch of elements you can use.</h3>
+			<p>&lt;h1&gt; &lt;ol&gt; &lt;dt&gt; &lt;p&gt;, etc</p>
+		</li>
+		<li>
+			<h3>Do not resize images with html.</h3>
+			<p>Use 'width' and 'height' wisely.</p>
+		</li>
+
+	</ul>
+</section>
+
+<section class="slide">
+	<h1><img src="images/one-more-thing.jpg"></h1>
+</section>
+
+<section class="slide">
+	<h1>...NEVER <br>repeat IDs.</h1>
+</section>
+
+<section class="slide">
+	<h1>?</h1>
 </section>
 <!--
 <section class="slide" id="themes">
