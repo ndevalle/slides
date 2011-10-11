@@ -28,7 +28,7 @@
 
 	
 	<!-- google fonts -->
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Kreon:300,400,700&amp;v1"
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Kreon:300,400,700&amp;v1">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic&amp;v1">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,bold,bolditalic&amp;v1">
 	<script src="../deck/modernizr.custom.js"></script>
@@ -86,9 +86,9 @@
 
 <section class="slide" id="great-html-2">
 	<h2>Why is it important?</h2>
-	<ol>
-		<li>
-			<h4>Scalability and Manteinance</h4>
+	<ul>
+		<li class="slide">
+			<h4>Scalability and Maintenance</h4>
 			<p>Recode your styles and javascript. No need to touch your main code.</p>
 		</li>
 		<li class="slide">
@@ -104,10 +104,10 @@
 			<p>The better your HTML is written, the less browsers will work to render it.</p>
 		</li>
 		<li class="slide">
-			<h4>Cross plattform applications</h4>
+			<h4>Cross device applications</h4>
 			<p>Same code, every device.</p>
 		</li>	
-	</ol>
+	</ul>
 </section>
 
 <section class="slide">
@@ -382,7 +382,7 @@ p {
 			<div class="slide wrong"><pre><code> &lt;form id='myform'&gt;</code></pre></div>
 			<div class="slide wrong"><pre><code> http://img.mysite.com/834jjas42.jpg</code></pre></div>
 			<div class="slide wrong"><pre><code> doTheMagic();</code></pre></div>
-			<div class="slide right"><pre><code> var password = $('#password');</code></pre></div>	
+			<div class="slide right"><pre><code> var password = $('#password').required().and().password();</code></pre></div>	
 	
 
 	
@@ -393,7 +393,6 @@ p {
 	<p>It's not only about names. <strong>Use the right element</strong>.</p>		
 	<div class="slide wrong"><pre><code> &lt;div class='title'&gt;</code></pre></div>
 	<div class="slide right"><pre><code> &lt;h1&gt;</code></pre></div>
-	<hr class="slide">
 	<div class="slide wrong"><pre><code> &lt;p class='quote'&gt;</code></pre></div>	
 	<div class="slide right"><pre><code> &lt;blockquote&gt;</code></pre></div>	
 </section>
@@ -402,10 +401,10 @@ p {
 	<h2>Be semantic (cont.)</h2>
 	<p>It could become standard.</p>		
 	<div class="slide"><pre><code> &lt;div class='header'&gt;</code></pre></div>
-	<div class="slide right"><pre><code> &lt;header&gt;</code></pre></div>
-	<hr class="slide">
+	<div class="slide right html5"><pre><code> &lt;header&gt;</code></pre></div>
+
 	<div class="slide"><pre><code> &lt;ul class='nav'&gt;</code></pre></div>	
-	<div class="slide right"><pre><code> &lt;nav&gt;</code></pre></div>	
+	<div class="slide right html5"><pre><code> &lt;nav&gt;</code></pre></div>	
 </section>
 
 <section class="slide" id="id-vs-class">

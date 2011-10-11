@@ -21,3 +21,7 @@
 
 li.important {color: #0B7495;font-weight: bold;}
 .rightcolumn {padding-left: 20px;}
+
+.html5 {
+	background: url("images/html5-logo.png") no-repeat center right;
+}
