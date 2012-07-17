@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>Presentation</title>
+
+    <meta charset='utf-8'>
+    <script
+      src='slides.js'></script>
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+  .rhino {
+  	 background: white url(img/fluent-rhino.png) 0% 100% no-repeat;
+  	}
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+        
+        
+       
+      <article class="rhino">
+        <h1>
+          Fluent conference
+        </h1>
+        <p>
+          Javascript & beyond
+        </p>
+      </article>
+      
+     <article class='fill'>
+        <h3>
+          May 29 - 31, 2012 - San Francisco, CA
+        </h3>
+        <p>
+          <img src='img/golden-gate.jpeg'>
+        </p>
+        <!-- <DIV CLASS='SOURCE WHITE'>
+          SOURCE: ERIC SCHMIDT
+        </DIV> -->
+      </article>
+
+
+      <article>
+        <h3>
+          What's Fluent?
+        </h3>
+         <ul class="build">
+          <li>
+            Showcase of Front End technologies
+          </li>
+          <li>
+            Focused on Javascript, HTML5 & CSS3
+          </li>
+          <li>
+            "A place to gather and learn from each other"
+          </li>
+          <li>
+          	Organized by <a href="http://oreilly.com/">O'Reilly</a>
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Keynotes and talks
+        </h1>
+        <p>The highlights</p>
+      </article>
+<!--
+<article class='fill'>
+        <h3>
+          HTML5
+        </h3>
+        <p>
+          <img src='img/html5.png'>
+        </p>
+
+      </article>
+		<article>
+        <h2>
+          10 Things You Didn't Know HTML5 Could Do!
+        </h2>
+        <p>Eric Bidelman, Google</p>
+      </article>
+
+<article>
+        <h3>
+          10 Things You Didn't Know HTML5 Could Do!
+        </h3>
+        <ul class="build">
+          <li>
+            CSS3 for layout & design (flexbox, grid layout, hierarchies, variables, etc)
+          </li>
+          <li>
+            Dynamic CSS: calc()
+            <pre>
+.box {
+   width: calc(100% - 4em);
+   height: calc(100% - 4em);
+}
+            </pre>
+          </li>
+          <li>
+            Data binding: CSS attr() & data-*
+            <pre>
+.input-value {
+	content: attr(data-value);
+	}
+</pre>
+
+
+          </li>
+          </article>
+          <article>
+        <h3>
+          10 Things You Didn't Know HTML5 Could Do! (cont.)
+        </h3>
+        <ul class="build">
+          <li>
+            File System API: it gives web applications access to a local filesystem "sandbox". 
+            <ul class="small">
+            <li>You can write and read files or even create or remove directories. </li>
+            <li>Persistent or Temporary</li>
+            <li>Could be used as a local storage solution</li>
+            </ul>
+            <pre>window.requestFileSystem(type, size, successCallback, errorCallback)</pre>
+          </li>
+          <li>
+            Serveless downloads (the <code>download</code> attributte)
+            <pre>&lt;a href="path/image.png" download="MyImage.png"&gt;Download&lt;/a&gt;</pre>
+            <p>The browser is going to download the image instead of navigate it.</p>
+          </li>
+        </ul>
+       </article>
+  <article>
+        <h3>
+          10 Things You Didn't Know HTML5 Could Do! (cont.)
+        </h3>
+        <ul class="build">
+          <li>
+            Evolution of <code>postMessage();</code> -> transfer, not copy (it's faster!)
+          </li>
+          <li>
+            Access to native hardware (Device API)
+          </li>
+        </ul>
+       </article>
+
+-->
+		<article class='fill'>
+        <h3>
+          Performance
+        </h3>
+        <p>
+          <img src='img/golden-gate.jpeg'>
+        </p>
+        <!-- <DIV CLASS='SOURCE WHITE'>
+          SOURCE: ERIC SCHMIDT
+        </DIV> -->
+      </article>
+		<article>
+        <h2>
+          Your Script Just Killed My Site<br>
+          High Performance Snippets
+        </h2>
+        <p>Steve Souders, Google</p>
+      </article>
+
+      <article>
+        <h3>
+          Your script just killed my site
+        </h3>
+        <ul class="build">
+          <li>
+            Identify the SPOFs on your site: ads, widgets, etc
+          </li>
+          <li>
+            If you're building widgets that are going to be used on 3rd party websites, don't make them SPOF
+          </li>
+          <li>
+            <code>&lt;script src='script.js'&gt;</code> = SPOF<br>
+            <small>Entire content blocked until they finish loading</small>
+          </li>
+          <li>
+            Test your site and identify the weakest link<br>
+            <small>Webpagetest.com to do so. Think about scripts blocked by firewalls (ex, China)</small>
+          </li>
+        </ul>
+       </article>
+       <article>
+       	<h3>Your script just killed my site (cont.)</h3>
+      	 <p><a href="httparchive">httparchive.org</a></p>
+      	<iframe src="http://httparchive.org/viewsite.php?pageid=1977772"></iframe>
+       </article>
+
+      <article>
+        <h3>
+          High Performance Snippets
+        </h3>
+        <ul class="build">
+         
+          <li>
+            Test every third party script with <a href="http://blog.patrickmeenan.com/2011/10/testing-for-frontend-spof.html">blackhole.webpagetest.com</a>
+       
+            <pre>
+72.66.115.13 ajax.googleapis.com     
+72.66.115.13 apis.google.com         
+72.66.115.13 www.google-analytics.com
+72.66.115.13 connect.facebook.net    
+72.66.115.13 platform.twitter.com </pre>
+          </li>
+          
+          <li>SPOF are not just timeouts, every third party site can have <em>alergies</em>. Failure happens!</li>
+          <li>SPOFs won't reflect on your metric (because they fire after the onload event)</li>
+           <li>
+            <strong>Make every script async</strong>
+          </li>
+        </ul>
+
+      </article>
+<article>
+        <h3>
+          High Performance Snippets (cont.)
+        </h3>
+
+        
+        <div class="build">
+         
+         
+            <p>Long cache times reduce the probability of FrontEnd SPOFs...</p>
+            <p>but short cache times is the only way snippets owners can push updates.</p>
+            
+            <p>But it's not the only way.</p>
+            
+          	<p>He came up a technique: <a href="http://www.stevesouders.com/blog/2012/05/22/self-updating-scripts/">Self updating scripts</a></p>
+          	<ul class="build">
+          		<li>1 - Update notification using version numbers (check if there's an update)</li>
+          		<li>2 - Overwrite cache</li>
+          	</ul>
+          	<small>The con: the update is used on the next visit/pageview.</small>
+         </div>
+        
+
+      </article>
+
+<article class='fill'>
+        <h3>
+          Mobile
+        </h3>
+        <p>
+          <img src='img/golden-gate.jpeg'>
+        </p>
+        <!-- <DIV CLASS='SOURCE WHITE'>
+          SOURCE: ERIC SCHMIDT
+        </DIV> -->
+      </article>
+<article>
+        <h2>
+          <a href="https://speakerdeck.com/u/jamesgpearce/p/mobile-device-apis-for-fun-and-profit">Mobile device APIs for Fun and Profit</a>
+
+        </h2>
+        <p>James Pierce, Facebook</p>
+      </article>
+
+      <article>
+        <h3>
+          Mobile Device APIs for Fun and Profit
+        </h3>
+        <ul class="build">
+          <li>
+            Mobile web is NOT only media queries. That's just a way of detecting screensize.
+          <li>
+            Mobile web != Responsive Web Design
+          <li>
+            Most of Facebook's mobile traffic comes from web.
+          <li>
+            So... let's take advantage of the Device APIs.
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Device APIs (cont.)
+        </h3>
+        
+        <ul class="build">
+          <li>
+            Client-side APIs that let's us interact with the device hardware. 
+          <li>
+            We can make applications that can jump outside the browser and enhance the user experience.
+         
+        </ul>
+        
+        
+      </article>
+      
+      
+      <article>
+        <h3>
+          Device APIs (cont.)
+        </h3>
+        <h4>Examples</h4>
+        <ul class="build">
+          <li>
+            Geolocation
+            <pre>
+navigator.<b>geolocation.getCurrentPosition</b>();
+</pre>
+<img src="img/geolocation.png" alt="geolocation">
+</article>
+<article>
+<h3>Device APIs Examples (cont.)</h3>
+<ul class="build">
+          <li>
+            Camera & User Media
+        <pre>
+&lt;input type="file" accept="image/*" capture="camera" /&gt;        
+</pre>
+<pre>
+navigator.getUserMedia(
+ {
+  audio: false,
+  video: true
+ }
+);
+</pre>
+<small>(you can bind that stream to a &lt;video&gt; tag) </small>        
+        </ul>
+        
+        
+      </article>
+ <article>
+<h3>Device APIs Examples (cont.)</h3>
+        <ul class="build">
+          <li>
+            te falta un pedazo aca!
+            
+</article> 
+<article class='fill'>
+        <h3>
+          Javascript
+        </h3>
+        <p>
+          <img src='img/golden-gate.jpeg'>
+        </p>
+        <!-- <DIV CLASS='SOURCE WHITE'>
+          SOURCE: ERIC SCHMIDT
+        </DIV> -->
+      </article>  
+      
+      <article>
+        <h2>
+          <a href="https://speakerdeck.com/u/jamesgpearce/p/mobile-device-apis-for-fun-and-profit">You Don't Need a Framework for that!</a>
+
+        </h2>
+        <p>Author</p>
+      </article>  
+      <!--<article>
+        <h3>
+          Slide with a table (smaller text)
+        </h3>
+        
+        <table>
+          <tr>
+            <th>
+              Name
+            <th>
+              Occupation
+          <tr>
+            <td>
+              Luke Mahé
+            <td>
+              V.P. of Keepin’ It Real
+          <tr>
+            <td>
+              Marcin Wichary
+            <td>
+              The Michael Bay of Doodles
+        </table>
+      </article>
+      
+      <article>
+        <h3>
+          Styles
+        </h3>
+        <ul>
+          <li>
+            <span class='red'>class="red"</span>
+          <li>
+            <span class='blue'>class="blue"</span>
+          <li>
+            <span class='green'>class="green"</span>
+          <li>
+            <span class='yellow'>class="yellow"</span>
+          <li>
+            <span class='black'>class="black"</span>
+          <li>
+            <span class='white'>class="white"</span>
+          <li>
+            <b>bold</b> and <i>italic</i>
+        </ul>
+      </article>
+      
+      <article>
+        <h2>
+          Segue slide
+        </h2>
+      </article>
+
+      <article>
+        <h3>
+          Slide with an image
+        </h3>
+        <p>
+          <img style='height: 500px' src='images/example-graph.png'>
+        </p>
+        <div class='source'>
+          Source: Sergey Brin
+        </div>
+      </article>
+
+      <article>
+        <h3>
+          Slide with an image (centered)
+        </h3>
+        <p>
+          <img class='centered' style='height: 500px' src='images/example-graph.png'>
+        </p>
+        <div class='source'>
+          Source: Larry Page
+        </div>
+      </article>
+
+      <article class='fill'>
+        <h3>
+          Image filling the slide (with optional header)
+        </h3>
+        <p>
+          <img src='images/example-cat.jpg'>
+        </p>
+        <div class='source white'>
+          Source: Eric Schmidt
+        </div>
+      </article>
+
+      <article>
+        <h3>
+          This slide has some code
+        </h3>
+        <section>
+        <pre>
+&lt;script type='text/javascript'&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  p { color: pink }
+  b { color: blue }
+  u { color: 'umber' }
+&lt;/style&gt;
+</pre>
+        </section>
+      </article>
+      
+      <article class='smaller'>
+        <h3>
+          This slide has some code (small font)
+        </h3>
+        <section>
+        <pre>
+&lt;script type='text/javascript'&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  p { color: pink }
+  b { color: blue }
+  u { color: 'umber' }
+&lt;/style&gt;
+</pre>
+        </section>
+      </article>
+      
+      <article>
+        <q>
+          The best way to predict the future is to invent it.
+        </q>
+        <div class='author'>
+          Alan Kay
+        </div>
+      </article>
+      
+      <article class='smaller'>
+        <q>
+          A distributed system is one in which the failure of a computer 
+          you didn’t even know existed can render your own computer unusable.
+        </q>
+        <div class='author'>
+          Leslie Lamport
+        </div>
+      </article>
+      
+      <article class='nobackground'>
+        <h3>
+          A slide with an embed + title
+        </h3>
+        
+        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+      </article>
+
+      <article class='nobackground'>
+        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+      </article>
+
+      <article class='fill'>
+        <h3>
+          Full-slide embed with (optional) slide title on top
+        </h3>
+        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+      </article>
+      -->
+      <article>
+        <h3>
+          Thank you!
+        </h3>
+        
+        <ul>
+          <li>
+            <a href='http://www.google.com'>google.com</a>
+        </ul>
+      </article>
+
+    </section>
+
+  </body>
+</html>
