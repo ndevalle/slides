@@ -1,4 +1,5 @@
-#Presentations in HTML
+#Slides
 
-I'm using deck.js (http://imakewebthings.github.com/deck.js/) for my cool html presentations
+Master is deprecated. All I care about is pages.
 
+http://ndevalle.github.com/slides/
