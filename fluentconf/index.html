@@ -27,6 +27,24 @@
   .rhino {
   	 background: white url(img/fluent-rhino.png) 0% 100% no-repeat;
   	}
+
+  .caniuseit, .source {
+    position: absolute;
+    bottom: 20px;
+    font-size: 14px;
+  }
+
+  .source {
+    z-index: 1;
+    color: white;
+    text-shadow: 1px 1px #000;
+    right: 0;
+  }
+
+  .half {
+    float: left;
+    width: 300px;
+  }
   </style>
 
   <body style='display: none'>
@@ -54,9 +72,7 @@
         <p>
           <img src='img/golden-gate.jpeg'>
         </p>
-        <!-- <DIV CLASS='SOURCE WHITE'>
-          SOURCE: ERIC SCHMIDT
-        </DIV> -->
+        <p class="source">http://www.flickr.com/photos/robvucic/7071287701/</p>
       </article>
 
 
@@ -172,11 +188,11 @@
           Performance
         </h3>
         <p>
-          <img src='img/golden-gate.jpeg'>
+          <img src='img/turtle.jpeg'>
         </p>
-        <!-- <DIV CLASS='SOURCE WHITE'>
-          SOURCE: ERIC SCHMIDT
-        </DIV> -->
+        <p class="source">
+          http://www.flickr.com/photos/23200522@N03/2545131283/
+        </p> 
       </article>
 		<article>
         <h2>
@@ -185,7 +201,17 @@
         </h2>
         <p>Steve Souders, Google</p>
       </article>
-
+      <article class="smaller">
+        <h3>
+          Your script just killed my site
+        </h3>
+        <q>
+          A single point of failure (SPOF) is a part of a system that, if it fails, will stop the entire system from working.
+        </q>
+        <div class='author'>
+            <a href="http://en.wikipedia.org/wiki/Single_point_of_failure">Wikipedia.org</a>
+        </div>
+      </article>
       <article>
         <h3>
           Your script just killed my site
@@ -268,11 +294,10 @@
           Mobile
         </h3>
         <p>
-          <img src='img/golden-gate.jpeg'>
+          <img src='img/mobiles.jpeg'>
         </p>
-        <!-- <DIV CLASS='SOURCE WHITE'>
-          SOURCE: ERIC SCHMIDT
-        </DIV> -->
+        <p class="source">
+http://www.flickr.com/photos/jesse757/3389113553/        </p> 
       </article>
 <article>
         <h2>
@@ -304,11 +329,17 @@
         </h3>
         
         <ul class="build">
-          <li>
-            Client-side APIs that let's us interact with the device hardware. 
-          <li>
+          <p>
+            <strong>Device APIs:</strong><br>
+              Client-side APIs that let's us interact with the device hardware. 
+          </p>
+          <p>
+            <em>What does it mean?</em>
+          </p>
+          <p>
             We can make applications that can jump outside the browser and enhance the user experience.
-         
+         </p>
+         <p style="padding-top:50px">...with Javascript</p>
         </ul>
         
         
@@ -327,6 +358,7 @@
 navigator.<b>geolocation.getCurrentPosition</b>();
 </pre>
 <img src="img/geolocation.png" alt="geolocation">
+<p class="caniuseit"><a target="_blank" href="http://caniuse.com/#search=geolocation">Browser Support</a></p>
 </article>
 <article>
 <h3>Device APIs Examples (cont.)</h3>
@@ -344,28 +376,86 @@ navigator.getUserMedia(
  }
 );
 </pre>
-<small>(you can bind that stream to a &lt;video&gt; tag) </small>        
+<small>(you can bind that stream to a &lt;video&gt; tag) </small>  
+   <p class="caniuseit"><a target="_blank" href="http://caniuse.com/#search=getusermedia">Browser Support</a></p>     
+
         </ul>
-        
+     
         
       </article>
  <article>
 <h3>Device APIs Examples (cont.)</h3>
         <ul class="build">
           <li>
-            te falta un pedazo aca!
-            
+          Sensor
+<pre>
+var sensor = new
+  SensorConnection (
+    'Temperature'
+  )
+</pre> 
+<ul class="half">
+<li>Temperature</li>
+<li>AmbientLight</li>                     
+<li>AmbientNoise</li>
+<li>MagneticField</li>
+</ul>
+<ul class="half">
+<li>Proximity</li>
+<li>AtmPressure</li>
+<li>RelHumidity</li>
+</ul>
+<p class="caniuseit">No support yet</p>
+</article> 
+<article>
+<h3>Messaging</h3>
+<ul>
+<li>Sharing</li>
+<li>Notifications</li>                     
+<li>Offline transport fallback</li>
+<li>Frictionless web sign on</li>
+</ul>
+<p class="caniuseit">No support (no W3C spec)</p>
+</article> 
+<article>
+<h3>The Mozilla WebAPI</h3>
+
+<ul class="half">
+<li>Telephony</li>
+<li>Messaging</li>                     
+<li>Contacts</li>
+<li>Camera</li>
+<li>Network</li>
+<li>USB</li>
+<li>Embebbed browser</li>
+<li>Battery</li>
+</ul>
+<ul class="half">
+<li>Device Status</li>
+<li>Settings</li>
+<li>Mouse lock</li>
+<li>Vibration</li>
+<li>NFC</li>
+<li>Bluetooth</li>
+<li>Calendar</li>
+<li>Background Devices</li>
+</ul>
+<p class="caniuseit"><a href="https://wiki.mozilla.org/Webapi">https://wiki.mozilla.org/WebAPI</a></p>
+</article> 
+<article>
+<h3>The Mozilla WebAPI: Gecko Phone</h3>
+<img class='centered' style='height: 500px;margin-top: 30px' src="img/gecko-phone.png">
+
+<p class="caniuseit"><a href="https://wiki.mozilla.org/Webapi">https://wiki.mozilla.org/WebAPI</a></p>
 </article> 
 <article class='fill'>
         <h3>
           Javascript
         </h3>
         <p>
-          <img src='img/golden-gate.jpeg'>
+          <img src='img/javascript.jpeg'>
         </p>
-        <!-- <DIV CLASS='SOURCE WHITE'>
-          SOURCE: ERIC SCHMIDT
-        </DIV> -->
+    <p class="source">http://www.flickr.com/photos/taly/5063768222/ (me!) </p> 
       </article>  
       
       <article>
@@ -373,8 +463,106 @@ navigator.getUserMedia(
           <a href="https://speakerdeck.com/u/jamesgpearce/p/mobile-device-apis-for-fun-and-profit">You Don't Need a Framework for that!</a>
 
         </h2>
-        <p>Author</p>
+        <p>Stelle Weyl, Standardista.com</p>
+
       </article>  
+      <article>
+        <h3>You don't need a framework for that!</h3>
+        <div class="build">
+          <h4>Why do we write frameworks?</h4>
+        <ul>
+          <li>To normalize features across browsers</li>
+          <li>To be able to code easier</li>
+        </ul>
+        <h4>So... What's the problem about using frameworks?</h4>
+        <ul>
+          <li>We keep reinventing the wheel</li>
+          <li>Since they are faster to learn, there's almost NO reason to learn Javascript</li>
+        </ul>
+        <p>... and that's scary</p>
+      </div>
+      </article>
+      <article>
+        <h3>What's the problem about using frameworks?</h3>
+        <div class="build">
+          <div><h4>We start doing things like this:</h4>
+<pre>
+&lt;script src="jquery.js"&gt;&lt;/script&gt;
+
+&lt;script type="text/javascript"&gt;
+  $('#content').addClass('touchable');
+&lt;/script&gt;
+</pre></div>
+<div>
+<h4>When we could have done this:</h4>
+<pre>
+&lt;script type="text/javascript"&gt;
+  document.getElementById("content").classList.add("touchable");
+&lt;/script&gt;
+</pre>
+</div>
+      </article>
+<article>
+  <h3>Why do we care?</h3>
+  <div class="build">
+  <h4>Mobile users care</h4>
+  <ul>
+    <li>Minimize Battery Usage</li>
+    <li>Reduce Latency (fewer HTTP requests)</li>
+    <li>Manage limited memory</li>
+    <li>Ensure a responsive UI</li>
+  </ul>
+  <p>Parsing Javascript = consumes CPU & energy = Drains your user's battery</p>
+  </div>
+</article>
+
+<article>
+  <h3>Why do we care?</h3>
+  <div class="build">
+  <h4>Don't be a SPOF</h4>
+
+  <p>Don't use frameworks on the 3rd party widgets you create!</p>
+  </div>
+</article>
+
+<article>
+  <h3>Write Vainilla JS</h3>
+
+  <ul class="build">
+    <li>If possible, make your entire application work BEFORE the library needs to download</li>
+    <li>Your users are no-js users while the files are downloading, parsing and executing</li>
+    <li>Get and maintain mad JS skills!</li>
+  </ul>
+ 
+</article>
+<article class="smaller">
+  <h3>Javascript is awesome but it's not always necessary!</h3>
+  <div class="build">
+    <div>
+    <h4>This:</h4>
+  <pre>
+&lt;script src="jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  $('li:first').addClass('first');
+&lt;/script&gt;
+</pre>
+</div>
+<div>
+<h4>Could be this:</h4>
+<pre>
+&lt;script type="text/javascript"&gt;
+  document.querySelector("li").classList.add("first");
+&lt;/script&gt;
+</pre>
+</div>
+<div>
+  <h4>But it also could be this:</h4>
+<pre>
+.li:first-of-type {
+  /* .first declarations */
+}
+</pre>
+</article>
       <!--<article>
         <h3>
           Slide with a table (smaller text)
@@ -432,7 +620,7 @@ navigator.getUserMedia(
           Slide with an image
         </h3>
         <p>
-          <img style='height: 500px' src='images/example-graph.png'>
+          <img  src='images/example-graph.png'>
         </p>
         <div class='source'>
           Source: Sergey Brin
