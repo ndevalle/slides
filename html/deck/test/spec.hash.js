@@ -17,37 +17,16 @@ describe('Deck JS Hash Extension', function() {
 		});
 	});
 	
-	it('should reassign ids on reinitialization', function() {
-		var $firstSlide = $.deck('getSlide', 0),
-		firstID = $firstSlide.attr('id');
-		
-		$firstSlide.before('<div class="slide"></div>');
-		$.deck('.slide');
-		expect($firstSlide).not.toHaveId(firstID);
-	});
-	
-   it('should update container with a state class including the slide id', function() {
-      var $c = $.deck('getContainer'),
-      osp = defaults.classes.onPrefix;
-      
-      expect($c).toHaveClass(osp + $.deck('getSlide', 0).attr('id'));
-      $.deck('next');
-      expect($c).toHaveClass(osp + $.deck('getSlide', 1).attr('id'));
-      $.deck('next');
-      expect($c).not.toHaveClass(osp + $.deck('getSlide', 1).attr('id'));
-      expect($c).toHaveClass(osp + $.deck('getSlide', 2).attr('id'));
-   });
-	
 	it('should update the href on slide change', function() {
 		var $hashLink = $(defaults.selectors.hashLink);
 		$.deck('go', 3);
-		expect($hashLink.attr('href')).toMatch('#slide-3');
+		expect($hashLink).toHaveAttr('href', '#slide-3');
 	});
 	
 	it('should use existing ids if they exist', function() {
 		var $hashLink = $(defaults.selectors.hashLink);
 		$.deck('go', 1);
-		expect($hashLink.attr('href')).toMatch('#custom-id');
+		expect($hashLink).toHaveAttr('href', '#custom-id');
 	});
 	
 	it('should update the URL on slide change (if supported)', function() {

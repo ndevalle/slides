@@ -69,6 +69,10 @@
 				visibility:visible;
 				@include translate(0, 1600px);
 			}
+
+			.deck-before, .deck-previous {
+				opacity:0.4;
+			}
 		}
 
 		> .deck-previous {

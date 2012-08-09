@@ -42,18 +42,13 @@ describe('Deck JS', function() {
 					expect($.deck('getSlide')).toHaveClass('slide4');
 				});
 
-				it('should go to the slide with specified id', function() {
-					$.deck('go', 'custom-id');
-					expect($.deck('getSlide')).toHaveId('custom-id');
+				it('should go nowhere if i is NaN', function() {
+					$.deck('go', 'foobar');
+					expect($.deck('getSlide')).toHaveClass('slide1');
 				});
 
 				it('should go nowhere if i is out of bounds', function() {
 					$.deck('go', 5);
-					expect($.deck('getSlide')).toHaveClass('slide1');
-				});
-				
-				it('should go nowhere if id does not exist', function() {
-					$.deck('go', 'i-dont-exist');
 					expect($.deck('getSlide')).toHaveClass('slide1');
 				});
 			});
@@ -231,12 +226,10 @@ describe('Deck JS', function() {
 				});
 				
 				it('should not trigger events that originate within editable elements', function() {
-					var $outside = $('<input type="text" />').appendTo('body');
 					e = jQuery.Event('keydown');
 					e.which = 87;
-					$outside.trigger(e);
+					$('.alt-slide1 input').trigger(e);
 					expect($.deck('getSlide')).toHaveClass('alt-slide1');
-					$outside.remove();
 				});
 			});
 		});
@@ -245,8 +238,6 @@ describe('Deck JS', function() {
 			var $d = $(document);
 
 			beforeEach(function() {
-				spyOnEvent($d, 'deck.init');
-				spyOnEvent($d, 'deck.beforeInit');
 				$.deck('.slide');
 				$.deck('go', 1);
 				spyOnEvent($d, 'deck.change');
@@ -277,45 +268,6 @@ describe('Deck JS', function() {
 					$d.bind('deck.change', f);
 					$.deck('go', 3);
 					$d.unbind('deck.change', f);
-				});
-				
-				it('should not change slides if default prevented', function() {
-					$d.bind('deck.change', false);
-					$.deck('go', 3);
-					expect($.deck('getSlide')).toEqual($.deck('getSlide', 1));
-					$d.unbind('deck.change', false);
-				});
-			});
-			
-			describe('deck.init', function() {
-				it('should fire on deck initialization', function() {
-					expect('deck.init').toHaveBeenTriggeredOn($d);
-				});
-				
-				it('should have already populated the slides array', function() {
-					var f = function() {
-						expect($.deck('getSlides').length).toBeGreaterThan(0);
-					};
-					
-					$d.bind('deck.init', f);
-					$.deck('.slide');
-					$d.unbind('deck.init', f);
-				});
-			});
-			
-			describe('deck.beforeInit', function() {
-				it('should fire on deck initialization', function() {
-					expect('deck.beforeInit').toHaveBeenTriggeredOn($d);
-				});
-				
-				it('should have not populated the slides array', function() {
-					var f = function() {
-						expect($.deck('getSlides').length).toEqual(0);
-					};
-					
-					$d.bind('deck.beforeInit', f);
-					$.deck('.slide');
-					$d.unbind('deck.beforeInit', f);
 				});
 			});
 		});
@@ -383,54 +335,6 @@ describe('Deck JS', function() {
 			expect($('.slide3').not('.slide5')).not.toHaveClass(defaults.classes.current);
 			expect($('.slide2').not('.slide4')).not.toHaveClass(defaults.classes.previous);
 			expect($('.slide4').not('.slide6')).not.toHaveClass(defaults.classes.next);
-		});
-	});
-
-	describe('iframes', function() {
-		beforeEach(function() {
-			loadFixtures('iframes.html');
-			if (Modernizr.history) {
-				history.replaceState({}, "", "#")
-			}
-			$.deck([
-				'.slide1',
-				'.slide2',
-				'.slide3',
-				'.slide4',
-				'.slide5',
-				'.slide6',
-				'.slide7',
-				'.slide8',
-				'.slide9',
-				'.slide10',
-			]);
-
-		});
-
-		it('should remove/restore iframe sources when leaving/entering a slide', function() {
-			$.deck('go', 4);
-        	expect($.deck('getSlide').find('iframe').attr('src')).toEqual('fixtures/iframe_simple.html');
-        	$.deck('next');
-        	expect($('.slide5').find('iframe').attr('src')).toEqual('');
-            $.deck('prev');
-            expect($('.slide5').find('iframe').attr('src')).toEqual('fixtures/iframe_simple.html');
-        });
-
-		it('should not store blank iframe sources', function() {
-		  $.deck('go', 6);
-		  $.deck('next');
-		  expect($.deck('getSlide').find('iframe').data('src')).toBeUndefined();
-		});
-	});
-	
-	describe('empty deck', function() {
-		beforeEach(function() {
-			loadFixtures('empty.html');
-			$.deck('.slide');
-		});
-		
-		describe('getSlide()', function() {
-			it('should not error on init', $.noop);
 		});
 	});
 });

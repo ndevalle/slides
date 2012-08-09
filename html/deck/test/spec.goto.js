@@ -61,43 +61,31 @@ describe('Deck JS Quick Go-To', function() {
 			expect($(defaults.selectors.container)).not.toHaveClass(defaults.classes.goto);
 		});
 		
-		it('should go to the slide number entered', function() {
+		it('should go to the slide entered', function() {
 			$(defaults.selectors.gotoInput).val('3');
 			$(defaults.selectors.gotoForm).submit();
 			expect($.deck('getSlide')).toEqual($.deck('getSlide'), 2);
 		});
 		
-		it('should go to the slide id entered', function() {
-			$(defaults.selectors.gotoInput).val('custom-id');
+		it('should go nowhere if a number is not entered', function() {
+			$(defaults.selectors.gotoInput).val('');
 			$(defaults.selectors.gotoForm).submit();
-			expect($.deck('getSlide')).toEqual($.deck('getSlide'), 1);
+			expect($(defaults.selectors.container)).toHaveClass(defaults.classes.goto);
+			expect($.deck('getSlide')).toEqual($.deck('getSlide'), 0);
 		});
 		
 		it('should go nowhere if the number is negative', function() {
 			$(defaults.selectors.gotoInput).val('-2');
 			$(defaults.selectors.gotoForm).submit();
+			expect($(defaults.selectors.container)).toHaveClass(defaults.classes.goto);
 			expect($.deck('getSlide')).toEqual($.deck('getSlide'), 0);
 		});
 		
 		it('should go nowhere if the number is greater than the number of slides', function() {
 			$(defaults.selectors.gotoInput).val('9');
 			$(defaults.selectors.gotoForm).submit();
+			expect($(defaults.selectors.container)).toHaveClass(defaults.classes.goto);
 			expect($.deck('getSlide')).toEqual($.deck('getSlide'), 0);
-		});
-		
-		it('should go nowhere if the id does not exist', function() {
-			$(defaults.selectors.gotoInput).val('do-not-exist');
-			$(defaults.selectors.gotoForm).submit();
-			expect($.deck('getSlide')).toEqual($.deck('getSlide'), 0);
-		});
-	});
-	
-	describe('Datalist population', function() {
-		it('should fill in options with all the slide ids', function() {
-			var $dataOptions = $(defaults.selectors.gotoDatalist).find('option');
-			expect($dataOptions.length).toEqual(5);
-			expect($dataOptions.eq(0).attr('value')).toEqual('slide-0');
-			expect($dataOptions.eq(1).attr('value')).toEqual('custom-id');
 		});
 	});
 	
@@ -114,29 +102,6 @@ describe('Deck JS Quick Go-To', function() {
 			expect($(defaults.selectors.container)).toHaveClass(defaults.classes.goto);
 			$d.trigger(e);
 			expect($(defaults.selectors.container)).not.toHaveClass(defaults.classes.goto);
-		});
-	});
-	
-	describe('countNested false', function() {
-	  beforeEach(function() {
-	    loadFixtures('nesteds.html');
-			$.deck('.slide', {
-				countNested: false
-			});
-			$.deck('showGoTo');
-	  });
-	  
-		it('should ignore nested slides when given a slide number', function() {
-			$(defaults.selectors.gotoInput).val('4');
-			$(defaults.selectors.gotoForm).submit();
-			expect($.deck('getSlide')).toHaveId('after');
-		});
-		
-		it('should respect top side of new slide range', function() {
-		  $.deck('go', 0);
-			$(defaults.selectors.gotoInput).val('6');
-			$(defaults.selectors.gotoForm).submit();
-			expect($.deck('getSlide')).toHaveId('slide-0');
 		});
 	});
 });

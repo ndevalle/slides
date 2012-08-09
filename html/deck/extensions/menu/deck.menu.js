@@ -1,5 +1,5 @@
 /*!
-Deck JS - deck.menu
+Deck JS - deck.menu - v1.0
 Copyright (c) 2011 Caleb Troughton
 Dual licensed under the MIT license and GPL license.
 https://github.com/imakewebthings/deck.js/blob/master/MIT-license.txt
@@ -12,8 +12,7 @@ slides in the deck. The deck menu state is indicated by the presence of a class
 on the deck container.
 */
 (function($, deck, undefined) {
-	var $d = $(document),
-	rootSlides; // Array of top level slides
+	var $d = $(document);
 	
 	/*
 	Extends defaults/options.
@@ -50,32 +49,8 @@ on the deck container.
 	to the deck container.
 	*/
 	$[deck]('extend', 'showMenu', function() {
-		var $c = $[deck]('getContainer'),
-		opts = $[deck]('getOptions');
-		
-		if ($c.hasClass(opts.classes.menu)) return;
-		
-		// Hide through loading class to short-circuit transitions (perf)
-		$c.addClass([opts.classes.loading, opts.classes.menu].join(' '));
-		
-		/* Forced to do this in JS until CSS learns second-grade math. Save old
-		style value for restoration when menu is hidden. */
-		if (Modernizr.csstransforms) {
-			$.each(rootSlides, function(i, $slide) {
-				$slide.data('oldStyle', $slide.attr('style'));
-				$slide.css({
-					'position': 'absolute',
-					'left': ((i % 4) * 25) + '%',
-					'top': (Math.floor(i / 4) * 25) + '%'
-				});
-			});
-		}
-		
-		// Need to ensure the loading class renders first, then remove
-		window.setTimeout(function() {
-			$c.removeClass(opts.classes.loading)
-				.scrollTop($[deck]('getSlide').offset().top);
-		}, 0);
+		$[deck]('getContainer').addClass($[deck]('getOptions').classes.menu);
+		$[deck]('getContainer').scrollTop($[deck]('getSlide').offset().top);
 	});
 
 	/*
@@ -85,26 +60,8 @@ on the deck container.
 	option from the deck container.
 	*/
 	$[deck]('extend', 'hideMenu', function() {
-		var $c = $[deck]('getContainer'),
-		opts = $[deck]('getOptions');
-		
-		if (!$c.hasClass(opts.classes.menu)) return;
-		
-		$c.removeClass(opts.classes.menu);
-		$c.addClass(opts.classes.loading);
-		
-		/* Restore old style value */
-		if (Modernizr.csstransforms) {
-			$.each(rootSlides, function(i, $slide) {
-				var oldStyle = $slide.data('oldStyle');
-
-				$slide.attr('style', oldStyle ? oldStyle : '');
-			});
-		}
-		
-		window.setTimeout(function() {
-			$c.removeClass(opts.classes.loading).scrollTop(0);
-		}, 0);
+		$[deck]('getContainer').removeClass($[deck]('getOptions').classes.menu);
+		$[deck]('getContainer').scrollTop(0);
 	});
 
 	/*
@@ -120,24 +77,7 @@ on the deck container.
 	$d.bind('deck.init', function() {
 		var opts = $[deck]('getOptions'),
 		touchEndTime = 0,
-		currentSlide,
-		slideTest = $.map([
-			opts.classes.before,
-			opts.classes.previous,
-			opts.classes.current,
-			opts.classes.next,
-			opts.classes.after
-		], function(el, i) {
-			return '.' + el;
-		}).join(', ');
-		
-		// Build top level slides array
-		rootSlides = [];
-		$.each($[deck]('getSlides'), function(i, $el) {
-			if (!$el.parentsUntil(opts.selectors.container, slideTest).length) {
-				rootSlides.push($el);
-			}
-		});
+		currentSlide;
 		
 		// Bind key events
 		$d.unbind('keydown.deckmenu').bind('keydown.deckmenu', function(e) {
